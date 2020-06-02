@@ -14,10 +14,10 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_h870.mk
+    $(LOCAL_DIR)/colt_h870.mk
 
 	
 COMMON_LUNCH_CHOICES := \
-    lineage_h870-user \
-    lineage_h870-userdebug \
-    lineage_h870-eng
+    colt_h870-user \
+    colt_h870-userdebug \
+    colt_h870-eng
