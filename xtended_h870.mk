@@ -29,8 +29,11 @@ PLATFORM_SECURITY_PATCH_OVERRIDE := 2019-05-01
 	
 VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH_OVERRIDE)
 
-#Boot animation resolution
+# Boot animation resolution
 TARGET_BOOT_ANIMATION_RES := 1440
+
+# In-built GAPPS
+WITH_GAPPS := false
 
 # Set those variables here to overwrite the inherited values.
 PRODUCT_DEVICE := h870
