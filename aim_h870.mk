@@ -1,4 +1,4 @@
-#
+PRODUCT_BUILD_PROP_OVERRIDES += \#
 # Copyright 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,7 +19,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/aim/config/common_full_phone.mk)
 
 # Inherit from h870 device
 $(call inherit-product, device/lge/h870/device.mk)
@@ -29,14 +29,26 @@ PLATFORM_SECURITY_PATCH_OVERRIDE := 2019-05-01
 	
 VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH_OVERRIDE)
 
+# Boot animation resolution
+TARGET_SCREEN_RES := 1440
+
+# Remove In-built GAPPS
+WITH_GAPPS := false
+
 # Set those variables here to overwrite the inherited values.
 PRODUCT_DEVICE := h870
-PRODUCT_NAME := lineage_h870
+PRODUCT_NAME := aim_h870
 PRODUCT_BRAND := lge
 PRODUCT_MODEL := LG-H870
 PRODUCT_MANUFACTURER := LGE
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
+    TARGET_DEVICE="lucye" \
+    PRODUCT_DEVICE="lucye" \
+    PRODUCT_NAME="lucye_global_com" \
+    PRIVATE_BUILD_DESC="lucye_global_com-user 9 PKQ1.190522.001 1930916292597 release-keys"
+
+BUILD_FINGERPRINT := "lge/lucye_global_com/lucye:9/PKQ1.190522.001/1930916292597:user/release-keys"
     TARGET_DEVICE="lucye" \
     PRODUCT_DEVICE="lucye" \
     PRODUCT_NAME="lucye_global_com" \
